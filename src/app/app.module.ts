@@ -3,16 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClientModule } from '@angular/common/http';
+import { DxChartModule } from 'devextreme-angular';
+import {
+  DxDataGridModule,
+  DxCheckBoxModule,
+  DxSelectBoxModule,
+} from 'devextreme-angular';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    DxChartModule,
+    DxDataGridModule,
+    DxCheckBoxModule,
+    DxSelectBoxModule,
+    NgxPaginationModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
